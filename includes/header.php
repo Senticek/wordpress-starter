@@ -43,7 +43,7 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image-->
-            <img class="masthead-avatar mb-5" src="assets/img/logo.png" alt="PHP" />
+            <img class="masthead-avatar mb-5" src="<?php bloginfo('template_directory');?>/assets/img/logo.png" alt="PHP" />
             <!-- Masthead Heading-->
             <h1 class="masthead-heading text-uppercase mb-0">Vývoj webových aplikací</h1>
             <!-- Icon Divider-->
@@ -55,4 +55,6 @@
             <!-- Masthead Subheading-->
             <p class="masthead-subheading font-weight-light mb-0">Nette - Symfony - Laravel</p>
         </div>
+
     </header>
+    
