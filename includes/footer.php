@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="cs">
 <footer class="footer text-center">
         <div class="container">
             <div class="row">
@@ -40,7 +42,7 @@
         <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i
                 class="fa fa-chevron-up"></i></a>
     </div>
-    <!-- Portfolio Modals-->
+     <!-- Portfolio Modals-->
     <!-- Portfolio Modal 1-->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog"
         aria-labelledby="portfolioModal1Label" aria-hidden="true">
@@ -275,6 +277,18 @@
             </div>
         </div>
     </div>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/main.js"></script>
+  
+    
+	
+    
     <?php wp_footer();?>
    
-</body>
+   
+</div>
