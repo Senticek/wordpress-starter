@@ -38,7 +38,7 @@ function addjs()
     wp_register_script('jqueryE', get_template_directory_uri() . "https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js", array(), 1 , 1, 1);
     wp_enqueue_script('jqueryE');
 
-    wp_register_script('main', get_template_directory_uri() . 'js/main.js', array(), 1 , 1, 1);
+    wp_register_script('main', get_template_directory_uri() . '/js/main.js', array(), 1 , 1, 1);
     wp_enqueue_script('main');
 
 
