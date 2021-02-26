@@ -7,9 +7,9 @@
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">Adresa</h4>
                     <p class="lead mb-0">
-                        Ulice 123/45
+                    <?php echo get_theme_mod('basic-footer-callout-address');?>
                         <br />
-                        616 00 Brno
+                    <?php echo get_theme_mod('basic-footer-callout-psc');?>
                     </p>
                 </div>
                 <!-- Footer Social Icons-->
