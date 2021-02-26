@@ -41,33 +41,45 @@ class Custom_Customizer {
             'priority' => 2,
             'description' => __('Edit for basic titles and texts', 'theminimalist'),
         ));
-         
         $wp_customize->add_setting('basic-titles-callout-display', array(
             'default' => 'No',
             'sanitize_callback' => array( $this, 'sanitize_custom_option' )
         ));
-        //About Us edit
-        $wp_customize->add_setting('basic-titles-callout-text', array(
+        //MainTitle Edit
+        $wp_customize->add_setting('basic-titles-callout-titleMain', array(
             'default' => '',
             'sanitize_callback' => array( $this, 'sanitize_custom_text' )
         ));
-        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-titles-callout-control', array(
-            'label' => 'About titles',
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-titles-callout-control-Main', array(
+            'label' => 'main title',
             'section' => 'basic-titles-callout-section',
-            'settings' => 'basic-titles-callout-text',
+            'settings' => 'basic-titles-callout-titleMain',
             'type' => 'textarea'
         )));
-
-        $wp_customize->add_setting('basic-titles-callout-text', array(
+        //SubTitle Edit
+        $wp_customize->add_setting('basic-titles-callout-titleSub', array(
             'default' => '',
             'sanitize_callback' => array( $this, 'sanitize_custom_text' )
         ));
-        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-titles-callout-control', array(
-            'label' => 'About titles',
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-titles-callout-control-Sub', array(
+            'label' => 'subtitle',
             'section' => 'basic-titles-callout-section',
-            'settings' => 'basic-titles-callout-text',
+            'settings' => 'basic-titles-callout-titleSub',
             'type' => 'textarea'
         )));
+         //About Us edit
+         $wp_customize->add_setting('basic-titles-callout-textUS', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_text' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-titles-callout-control-Us', array(
+            'label' => 'About us',
+            'section' => 'basic-titles-callout-section',
+            'settings' => 'basic-titles-callout-textUS',
+            'type' => 'textarea'
+            
+        )));
+      
          
        /* $wp_customize->add_setting('basic-titles-callout-image', array(
             'default' => '',
