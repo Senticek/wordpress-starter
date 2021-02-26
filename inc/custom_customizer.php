@@ -9,6 +9,7 @@ class Custom_Customizer {
         */
         $this->titles_callout_section( $wp_customize );
         $this->footer_callout_section( $wp_customize );
+        $this->link_callout_section( $wp_customize );
     }
     
     /* Sanitize Inputs */
@@ -101,7 +102,7 @@ class Custom_Customizer {
             'section' => 'basic-titles-callout-section',
             'settings' => 'basic-titles-callout-textUS',
             'type' => 'textarea'
-            
+          
         )));
         //image edit
         $wp_customize->add_setting('basic-titles-callout-image', array(
@@ -128,7 +129,8 @@ class Custom_Customizer {
             
         )));
     }
-     /* BasicTitles Section */
+
+     /* Footer address edit */
      private function footer_callout_section( $wp_customize ) {
 		// New panel for "Layout".
         $wp_customize->add_section('basic-footer-callout-section', array(
@@ -141,26 +143,75 @@ class Custom_Customizer {
             'sanitize_callback' => array( $this, 'sanitize_custom_option' )
         ));
         //Adress Edit
-        $wp_customize->add_setting('basic-footer-callout-titleMain', array(
+        $wp_customize->add_setting('basic-footer-callout-address', array(
             'default' => '',
             'sanitize_callback' => array( $this, 'sanitize_custom_text' )
         ));
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-footer-callout-control-address', array(
             'label' => 'address',
             'section' => 'basic-footer-callout-section',
-            'settings' => 'basic-footer-callout-titleMain',
+            'settings' => 'basic-footer-callout-address',
             'type' => 'text'
         )));
          //Psc Edit
-         $wp_customize->add_setting('basic-footer-callout-titleMain', array(
+         $wp_customize->add_setting('basic-footer-callout-psc', array(
             'default' => '',
             'sanitize_callback' => array( $this, 'sanitize_custom_text' )
         ));
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-footer-callout-control-psc', array(
             'label' => 'psc',
             'section' => 'basic-footer-callout-section',
-            'settings' => 'basic-footer-callout-titleMain',
+            'settings' => 'basic-footer-callout-psc',
             'type' => 'text'
         )));
     }
+
+    /*Footer link Edit*/ 
+    private function link_callout_section( $wp_customize ) {
+		// New panel for "Layout".
+        $wp_customize->add_section('basic-link-callout-section', array(
+            'title' => 'Footer link Edit',
+            'priority' => 2,
+            'description' => __('Edit for basic footer titles and texts'),
+        ));
+        $wp_customize->add_setting('basic-link-callout-display', array(
+            'default' => 'No',
+            'sanitize_callback' => array( $this, 'sanitize_custom_option' )
+        ));
+          //text Edit
+        $wp_customize->add_setting('basic-link-callout-text', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_text' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-link-callout-control-text', array(
+            'label' => 'text',
+            'section' => 'basic-link-callout-section',
+            'settings' => 'basic-link-callout-text',
+            'type' => 'text'
+        )));
+        //url edit
+        $wp_customize->add_setting('basic-link-callout-link', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_url' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-link-callout-control-link', array(
+            'label' => 'url',
+            'section' => 'basic-link-callout-section',
+            'settings' => 'basic-link-callout-link',
+            'type' => 'url'
+        )));
+        //clickable url text
+        $wp_customize->add_setting('basic-link-callout-clickable', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_text' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-link-callout-control-clickable', array(
+            'label' => 'clickable url text',
+            'section' => 'basic-link-callout-section',
+            'settings' => 'basic-link-callout-clickable',
+            'type' => 'text'
+        )));
+
+    }
+  
 }
