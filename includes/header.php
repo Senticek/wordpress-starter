@@ -17,9 +17,10 @@
 
 <body id="page-top">
     <!-- Navigation-->
+   
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">DCSoft</a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
             <button
                 class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
                 type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -45,7 +46,7 @@
             <!-- Masthead Avatar Image-->
             <img class="masthead-avatar mb-5" src="<?php bloginfo('template_directory');?>/assets/img/logo.png" alt="PHP" />
             <!-- Masthead Heading-->
-            <h1 class="masthead-heading text-uppercase mb-0">Vývoj webových aplikací</h1>
+            <h1 class="masthead-heading text-uppercase mb-0">re</h1>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
