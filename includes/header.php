@@ -46,7 +46,14 @@
             <!-- Masthead Avatar Image-->
             <img class="masthead-avatar mb-5" src="<?php bloginfo('template_directory');?>/assets/img/logo.png" alt="PHP" />
             <!-- Masthead Heading-->
-            <h1 class="masthead-heading text-uppercase mb-0">re</h1>
+             <?php 
+                $Main = get_theme_mod('basic-titles-callout-titleMain'); 
+                 if ($Main != '') {
+                     echo '<h1 class="masthead-heading text-uppercase mb-0">' . $Main .'</h1>';
+                 } else {
+                     echo "Edit this by going to your Dashboard -> Appearance -> Customise -> Author Editor";
+                 }
+             ?> 
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -54,7 +61,7 @@
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0">Nette - Symfony - Laravel</p>
+            <p class="masthead-subheading font-weight-light mb-0"><?php echo get_theme_mod('basic-titles-callout-titleSub'); ?></p>
         </div>
 
     </header>

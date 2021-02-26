@@ -4,7 +4,7 @@
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
             <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><?php echo $main['maintitle'];?></h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><?php echo get_theme_mod('basic-titles-callout-titlePortfolio');?></h2>
             <!-- Icon Divider-->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
@@ -86,7 +86,7 @@
     <section class="page-section bg-primary text-white mb-0" id="about">
         <div class="container">
             <!-- About Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-white">O nás</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-white"><?php echo get_theme_mod('basic-titles-callout-titleUS'); ?></h2>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -96,13 +96,16 @@
             <!-- About Section Content-->
             <div class="row">
                 <div class="col-lg-12 ml-auto">
-                    <p class="lead text-center">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras pede libero, dapibus nec, pretium
-                        sit amet, tempor quis. Vivamus porttitor turpis ac leo. In laoreet, magna id viverra tincidunt,
-                        sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Proin in tellus sit amet nibh
-                        dignissim sagittis. Pellentesque sapien. Pellentesque arcu. Cum sociis natoque penatibus et
-                        magnis dis parturient montes, nascetur ridiculus mus.
-                    </p>
+                    
+                    <?php 
+                        $aboutUS = get_theme_mod('basic-titles-callout-textUS');
+                        if ($aboutUS != '') {
+                            echo '<p class="lead text-center">' . $aboutUS .'</p>';
+                        } else {
+                            echo "Edit this by going to your Dashboard -> Appearance -> Customise -> Author Editor";
+                        }
+                    ?>
+                    
                 </div>
             </div>
         </div>
