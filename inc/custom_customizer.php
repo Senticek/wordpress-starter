@@ -54,7 +54,7 @@ class Custom_Customizer {
             'label' => 'main title',
             'section' => 'basic-titles-callout-section',
             'settings' => 'basic-titles-callout-titleMain',
-            'type' => 'textarea'
+            'type' => 'text'
         )));
         //SubTitle Edit
         $wp_customize->add_setting('basic-titles-callout-titleSub', array(
@@ -65,9 +65,32 @@ class Custom_Customizer {
             'label' => 'subtitle',
             'section' => 'basic-titles-callout-section',
             'settings' => 'basic-titles-callout-titleSub',
-            'type' => 'textarea'
+            'type' => 'text'
         )));
-         //About Us edit
+         //Portfolio title Edit
+         $wp_customize->add_setting('basic-titles-callout-titlePortfolio', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_text' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-titles-callout-control-titlePortfolio', array(
+            'label' => 'title of portfolio section',
+            'section' => 'basic-titles-callout-section',
+            'settings' => 'basic-titles-callout-titlePortfolio',
+            'type' => 'text'
+        )));
+          //About US title edit
+          $wp_customize->add_setting('basic-titles-callout-titleUS', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_text' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-titles-callout-control-titleUs', array(
+            'label' => 'About us title',
+            'section' => 'basic-titles-callout-section',
+            'settings' => 'basic-titles-callout-titleUS',
+            'type' => 'text'
+            
+        )));
+         //About Us text edit
          $wp_customize->add_setting('basic-titles-callout-textUS', array(
             'default' => '',
             'sanitize_callback' => array( $this, 'sanitize_custom_text' )
