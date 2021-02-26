@@ -44,7 +44,7 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image-->
-            <img class="masthead-avatar mb-5" src="<?php bloginfo('template_directory');?>/assets/img/logo.png" alt="PHP" />
+            <img  class="masthead-avatar mb-5" src="<?php echo wp_get_attachment_url(get_theme_mod('basic-titles-callout-image')) ?>" alt="PHP" />
             <!-- Masthead Heading-->
              <?php 
                 $Main = get_theme_mod('basic-titles-callout-titleMain'); 
