@@ -8,6 +8,7 @@ class Custom_Customizer {
         * Add settings to sections.
         */
         $this->titles_callout_section( $wp_customize );
+        $this->footer_callout_section( $wp_customize );
     }
     
     /* Sanitize Inputs */
@@ -125,6 +126,41 @@ class Custom_Customizer {
             'settings' => 'basic-titles-callout-titleContact',
             'type' => 'text'
             
+        )));
+    }
+     /* BasicTitles Section */
+     private function footer_callout_section( $wp_customize ) {
+		// New panel for "Layout".
+        $wp_customize->add_section('basic-footer-callout-section', array(
+            'title' => 'Footer Address Edit',
+            'priority' => 2,
+            'description' => __('Edit for basic footer titles and texts'),
+        ));
+        $wp_customize->add_setting('basic-footer-callout-display', array(
+            'default' => 'No',
+            'sanitize_callback' => array( $this, 'sanitize_custom_option' )
+        ));
+        //Adress Edit
+        $wp_customize->add_setting('basic-footer-callout-titleMain', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_text' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-footer-callout-control-address', array(
+            'label' => 'address',
+            'section' => 'basic-footer-callout-section',
+            'settings' => 'basic-footer-callout-titleMain',
+            'type' => 'text'
+        )));
+         //Psc Edit
+         $wp_customize->add_setting('basic-footer-callout-titleMain', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_text' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-footer-callout-control-psc', array(
+            'label' => 'psc',
+            'section' => 'basic-footer-callout-section',
+            'settings' => 'basic-footer-callout-titleMain',
+            'type' => 'text'
         )));
     }
 }
