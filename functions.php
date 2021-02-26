@@ -45,5 +45,9 @@ function addjs()
 }
 add_action('wp_enqueue_scripts', 'addjs');
 
+// Customizer Settings
+require get_stylesheet_directory() . '/inc/custom_customizer.php';
+new Custom_Customizer();
+
 
 
