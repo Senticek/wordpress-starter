@@ -114,7 +114,7 @@
     <section class="page-section" id="contact">
         <div class="container">
             <!-- Contact Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Kontaktujte nás</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><?php echo get_theme_mod('basic-titles-callout-titleContact'); ?></h2>
             <!-- Icon Divider-->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>

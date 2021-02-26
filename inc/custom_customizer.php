@@ -102,17 +102,29 @@ class Custom_Customizer {
             'type' => 'textarea'
             
         )));
+        //image edit
         $wp_customize->add_setting('basic-titles-callout-image', array(
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'sanitize_callback' => array( $this, 'sanitize_custom_url' )
         ));
-    
         $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'basic-titles-callout-image-control', array(
             'label' => 'Main Image control',
             'section' => 'basic-titles-callout-section',
             'settings' => 'basic-titles-callout-image',
+        )));
+         //contact section title edit
+           $wp_customize->add_setting('basic-titles-callout-titleContact', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_text' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-titles-callout-control-titleContact', array(
+            'label' => 'About us title',
+            'section' => 'basic-titles-callout-section',
+            'settings' => 'basic-titles-callout-titleContact',
+            'type' => 'text'
+            
         )));
     }
 }
