@@ -26,8 +26,8 @@
                 <div class="col-lg-4">
                     <h4 class="text-uppercase mb-4">Odkazy</h4>
                     <p class="lead mb-0">
-                        Více informací naleznete na
-                        <a href="https://dcsoft.cz/">dcsoft.cz</a>
+                    <?php echo get_theme_mod('basic-link-callout-text');?>
+                    <a href="<?php echo get_theme_mod('basic-link-callout-link')?>"><?php echo get_theme_mod('basic-link-callout-clickable');?></a>
                     </p>
                 </div>
             </div>
