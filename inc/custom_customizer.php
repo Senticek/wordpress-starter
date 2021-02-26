@@ -33,13 +33,13 @@ class Custom_Customizer {
         }
     }
   
-    /* Author Section */
+    /* BasicTitles Section */
     private function titles_callout_section( $wp_customize ) {
 		// New panel for "Layout".
         $wp_customize->add_section('basic-titles-callout-section', array(
             'title' => 'BasicTitles',
             'priority' => 2,
-            'description' => __('Edit for basic titles and texts', 'theminimalist'),
+            'description' => __('Edit for basic titles and texts'),
         ));
         $wp_customize->add_setting('basic-titles-callout-display', array(
             'default' => 'No',
@@ -102,21 +102,17 @@ class Custom_Customizer {
             'type' => 'textarea'
             
         )));
-      
-         
-       /* $wp_customize->add_setting('basic-titles-callout-image', array(
+        $wp_customize->add_setting('basic-titles-callout-image', array(
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'sanitize_callback' => array( $this, 'sanitize_custom_url' )
         ));
     
-        $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'basic-titles-callout-image-control', array(
-            'label' => 'Image',
+        $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'basic-titles-callout-image-control', array(
+            'label' => 'Main Image control',
             'section' => 'basic-titles-callout-section',
             'settings' => 'basic-titles-callout-image',
-            'width' => 442,
-            'height' => 310
-        )));*/
+        )));
     }
 }
