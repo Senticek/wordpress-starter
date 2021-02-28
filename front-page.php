@@ -13,74 +13,34 @@
             </div>
             <!-- Portfolio Grid Items-->
             <div class="row justify-content-center">
-                <!-- Portfolio Item 1-->
+                    <?php
+                        // WP Query arguments
+                    $args = array('numberposts' => '-1'); // -1 get all posts
+                        // WP Query
+                    $query = new WP_Query($args);
+                        // Get posts
+                    $posts = get_posts($args);
+                        // Loop through posts
+                       
+                    foreach ($posts as $post) :
+                            setup_postdata($post);
+                    ?>
                 <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#<?php the_title();?>">
+                        
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/portfolio/cabin.png" alt="" />
+                        <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
                     </div>
                 </div>
-                <!-- Portfolio Item 2-->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/portfolio/cake.png" alt="" />
-                    </div>
-                </div>
-                <!-- Portfolio Item 3-->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/portfolio/circus.png" alt="" />
-                    </div>
-                </div>
-                <!-- Portfolio Item 4-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/portfolio/game.png" alt="" />
-                    </div>
-                </div>
-                <!-- Portfolio Item 5-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/portfolio/safe.png" alt="" />
-                    </div>
-                </div>
-                <!-- Portfolio Item 6-->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/portfolio/submarine.png" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
+                    
+                        <?php
+                        endforeach;
+                        wp_reset_postdata();
+                        ?>
+         </div>
     </section>
     <!-- About Section-->
     <section class="page-section bg-primary text-white mb-0" id="about">
