@@ -22,9 +22,6 @@ wp_enqueue_style('scss');
 }
 add_action('wp_enqueue_scripts', 'load_stylesheets');
 
-
-
-
 //load scripts
 function addjs()
 {

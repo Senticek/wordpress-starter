@@ -59,7 +59,6 @@
                         endforeach;
                         wp_reset_postdata();
                         ?>
-       
     <?php wp_footer();?>
    
    
