@@ -26,7 +26,7 @@
                             setup_postdata($post);
                     ?>
                 <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#<?php the_title();?>">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal-<?php echo get_the_ID();?>">
                         
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                             <div class="portfolio-item-caption-content text-center text-white"><i
@@ -35,6 +35,49 @@
                         <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
                     </div>
                 </div>
+                            <!-- Portfolio Modals-->
+                <div class="portfolio-modal modal fade" id="portfolioModal-<?php echo get_the_ID()?>" tabindex="-1" role="dialog"
+                                aria-labelledby="portfolioModal-<?php echo get_the_ID()?>Label" aria-hidden="true">
+                                <div class="modal-dialog modal-xl" role="document">
+                                    <div class="modal-content">
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                                        </button>
+                                        <div class="modal-body text-center">
+                                            <div class="container">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                        <!-- Portfolio Modal - Title-->
+                                                        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                                            id="portfolioModal-<?php echo get_the_ID()?>Label"><?php the_title(); ?></h2>
+                                                        <!-- Icon Divider-->
+                                                        <div class="divider-custom">
+                                                            <div class="divider-custom-line"></div>
+                                                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                                            <div class="divider-custom-line"></div>
+                                                        </div>
+                                                        <!-- Portfolio Modal - Image-->
+                                                        <img class="img-fluid rounded mb-5" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
+                                                        <!-- Portfolio Modal - Text-->
+                                                        <p class="mb-5">
+                                                        <?php the_content(); ?>
+                                                        </p>
+                                                        <button class="btn btn-primary" data-dismiss="modal">
+                                                            <i class="fas fa-times fa-fw"></i>
+                                                            Close Window
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+
+                
+                
+                
                     
                         <?php
                         endforeach;
@@ -89,7 +132,12 @@
             </div>
         </div>
     </section>
-   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/main.js"></script>
    
 
 <?php get_template_part('includes/footer');?>
