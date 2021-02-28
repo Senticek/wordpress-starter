@@ -15,12 +15,12 @@
                 <!-- Footer Social Icons-->
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">Sociální sítě</h4>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+                    <a class="btn btn-outline-light btn-social mx-1" href="<?php echo get_theme_mod('basic-socials-callout-FB')?>"><i
                             class="fab fa-fw fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+                    <a class="btn btn-outline-light btn-social mx-1" href="<?php echo get_theme_mod('basic-socials-callout-twitter')?>"><i class="fab fa-fw fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="<?php echo get_theme_mod('basic-socials-callout-linkedin')?>"><i
                             class="fab fa-fw fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="<?php echo get_theme_mod('basic-socials-callout-dribble')?>"><i class="fab fa-fw fa-dribbble"></i></a>
                 </div>
                 <!-- Footer About Text-->
                 <div class="col-lg-4">
