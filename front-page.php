@@ -1,6 +1,5 @@
 <?php get_template_part('includes/header');?>
     <!-- Portfolio Section-->
-
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
             <!-- Portfolio Section Heading-->
@@ -11,7 +10,6 @@
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-            <!-- Portfolio Grid Items-->
             <div class="row justify-content-center">
                     <?php
                         // WP Query arguments
@@ -25,6 +23,7 @@
                     foreach ($posts as $post) :
                             setup_postdata($post);
                     ?>
+                     <!-- Portfolio Grid Items-->
                 <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal-<?php echo get_the_ID();?>">
                         
@@ -73,12 +72,6 @@
                                     </div>
                                 </div>
                             </div>
-                        
-
-                
-                
-                
-                    
                         <?php
                         endforeach;
                         wp_reset_postdata();
@@ -99,7 +92,6 @@
             <!-- About Section Content-->
             <div class="row">
                 <div class="col-lg-12 ml-auto">
-                    
                     <?php 
                         $aboutUS = get_theme_mod('basic-titles-callout-textUS');
                         if ($aboutUS != '') {
@@ -108,7 +100,6 @@
                             echo "Edit this by going to your Dashboard -> Appearance -> Customise -> Author Editor";
                         }
                     ?>
-                    
                 </div>
             </div>
         </div>
@@ -138,11 +129,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/main.js"></script>
-   
-
 <?php get_template_part('includes/footer');?>
-
-
- 
-
 </html>
