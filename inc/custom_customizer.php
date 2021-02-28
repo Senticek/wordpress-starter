@@ -10,6 +10,7 @@ class Custom_Customizer {
         $this->titles_callout_section( $wp_customize );
         $this->footer_callout_section( $wp_customize );
         $this->link_callout_section( $wp_customize );
+        $this->socials_callout_section($wp_customize);
     }
     
     /* Sanitize Inputs */
@@ -211,6 +212,65 @@ class Custom_Customizer {
             'settings' => 'basic-link-callout-clickable',
             'type' => 'text'
         )));
+
+    }
+     /*Footer link Edit*/ 
+     private function socials_callout_section( $wp_customize ) {
+		// New panel for "Layout".
+        $wp_customize->add_section('basic-socials-callout-section', array(
+            'title' => 'Socials link Edit',
+            'priority' => 2,
+            'description' => __('Edit for basic socials urls'),
+        ));
+        $wp_customize->add_setting('basic-socials-callout-display', array(
+            'default' => 'No',
+            'sanitize_callback' => array( $this, 'sanitize_custom_option' )
+        ));
+          //Facebook Edit
+        $wp_customize->add_setting('basic-socials-callout-FB', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_url' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-socials-callout-control-FB', array(
+            'label' => 'fb Url',
+            'section' => 'basic-socials-callout-section',
+            'settings' => 'basic-socials-callout-FB',
+            'type' => 'url'
+        )));
+          //twitter Edit
+          $wp_customize->add_setting('basic-socials-callout-twitter', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_url' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-socials-callout-control-twitter', array(
+            'label' => 'twitter Url',
+            'section' => 'basic-socials-callout-section',
+            'settings' => 'basic-socials-callout-twitter',
+            'type' => 'url'
+        )));
+          //linkedin Edit
+          $wp_customize->add_setting('basic-socials-callout-linkedin', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_url' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-socials-callout-control-linkedin', array(
+            'label' => 'linkedin Url',
+            'section' => 'basic-socials-callout-section',
+            'settings' => 'basic-socials-callout-linkedin',
+            'type' => 'url'
+        )));
+          //dribble Edit
+          $wp_customize->add_setting('basic-socials-callout-dribble', array(
+            'default' => '',
+            'sanitize_callback' => array( $this, 'sanitize_custom_url' )
+        ));
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-socials-callout-control-dribble', array(
+            'label' => 'dribble Url',
+            'section' => 'basic-socials-callout-section',
+            'settings' => 'basic-socials-callout-dribble',
+            'type' => 'url'
+        )));
+      
 
     }
   
