@@ -40,8 +40,9 @@
             </div>
         </div>
     </nav>
+    </div>
     <!-- Masthead-->
-    <header class="masthead bg-primary text-white text-center">
+    <header  class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image-->
             <img  class="masthead-avatar mb-5" src="<?php echo wp_get_attachment_url(get_theme_mod('basic-titles-callout-image')) ?>" alt="PHP" />
